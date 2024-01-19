@@ -48,6 +48,11 @@ local plugins = {
   "L3MON4D3/LuaSnip",
   "saadparwaiz1/cmp_luasnip",
   "rafamadriz/friendly-snippets",
+  {
+  'mrcjkb/rustaceanvim',
+  version = '^3', -- Recommended
+  ft = { 'rust' },
+  },
   {'akinsho/toggleterm.nvim', version = "*"},
 }
 
