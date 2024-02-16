@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
-    "folke/tokyonight.nvim",
+    'navarasu/onedark.nvim',
     lazy = false,
     priority = 1000,
     opts = {},
