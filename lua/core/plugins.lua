@@ -12,11 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  {
-    'navarasu/onedark.nvim',
+  { 'dasupradyumna/midnight.nvim',
     lazy = false,
-    priority = 1000,
-    opts = {},
+    priority = 1000
   },
   {
     "nvim-tree/nvim-tree.lua",
