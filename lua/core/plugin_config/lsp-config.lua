@@ -1,6 +1,6 @@
 require("mason").setup()
 
-local servers = { "lua_ls", "clangd", "pyright", "cssls", "tsserver"}
+local servers = { "clangd", "lua_ls", "pyright", "cssls", "tsserver" }
 
 require("mason-lspconfig").setup {
   ensure_installed = servers,
@@ -22,11 +22,28 @@ local on_attach = function(_, _)
 end
 local lspconfig = require "lspconfig"
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
-end
+local clangd_cmd = {
+  "clangd",
+  "--background-index",
+  "--clang-tidy",
+  "--header-insertion=iwyu",
+  "--completion-style=detailed",
+  "--function-arg-placeholders",
+  "--fallback-style=llvm",
+  "--header-insertion=never",
+}
 
--- rust setup
+for _, lsp in ipairs(servers) do
+  if lsp == "clangd" then
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      cmd = clangd_cmd,
+    }
+  else
+    lspconfig[lsp].setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+    }
+  end
+end
