@@ -6,4 +6,5 @@ require("core.plugin_config.lualine")
 require("core.plugin_config.lsp-config")
 require("core.plugin_config.complitions")
 require("core.plugin_config.toggleterm")
+require("core.plugin_config.comments")
 

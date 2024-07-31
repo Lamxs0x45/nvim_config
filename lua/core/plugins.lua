@@ -12,7 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-  { 'dasupradyumna/midnight.nvim',
+  {
+    'dasupradyumna/midnight.nvim',
     lazy = false,
     priority = 1000
   },
@@ -38,6 +39,10 @@ local plugins = {
   {
     'nvim-lualine/lualine.nvim',
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  },
+  {
+    'numToStr/Comment.nvim',
+    lazy =  false,
   },
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
