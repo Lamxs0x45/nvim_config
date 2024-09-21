@@ -1,6 +1,6 @@
 require("mason").setup()
 
-local servers = { "clangd", "lua_ls", "pyright", "cssls", "tsserver" }
+local servers = { "clangd", "lua_ls", "pyright", "cssls", "tsserver", "gopls"}
 
 require("mason-lspconfig").setup {
   ensure_installed = servers,
@@ -27,8 +27,6 @@ local clangd_cmd = {
   "--background-index",
   "--clang-tidy",
   "--header-insertion=iwyu",
-  "--completion-style=detailed",
-  "--function-arg-placeholders",
   "--fallback-style=llvm",
   "--header-insertion=never",
 }

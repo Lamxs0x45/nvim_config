@@ -4,7 +4,8 @@ require("toggleterm").setup{
   hide_numbers = true,
   shade_terminals = true,
   shading_factor = 2,
-  direction = 'float',
+  direction = 'vertical',
+  size = 70,
   float_opts = {
     border = 'curved'
   }
