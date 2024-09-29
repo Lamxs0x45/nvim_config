@@ -1,4 +1,5 @@
  vim.g.mapleader = " "
- vim.keymap.set('n', '<c-n>', ':NvimTreeToggle<CR>', {
-    noremap = true
+ vim.keymap.set('n', '<leader>v', ':vsplit<CR>', {
+    noremap = true,
+    silent = true
   })
