@@ -1,6 +1,6 @@
 require("mason").setup()
 
-local servers = { "lua_ls", "pyright", "cssls", "tsserver", "gopls", "rust_analyzer" }
+local servers = { "lua_ls", "pyright", "cssls", "tsserver" , "rust_analyzer" }
 
 require("mason-lspconfig").setup {
     ensure_installed = servers,
@@ -33,6 +33,10 @@ local clangd_cmd = {
 }
 
 lspconfig["hls"].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig["gdscript"].setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
