@@ -6,7 +6,7 @@ require("mason-lspconfig").setup {
     ensure_installed = servers,
 }
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local capabilities = require('blink.cmp').get_lsp_capabilities()
 local on_attach = function(_, _)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, {})
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
