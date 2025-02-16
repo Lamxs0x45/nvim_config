@@ -37,16 +37,18 @@ local plugins = {
   dependencies = 'rafamadriz/friendly-snippets',
   version = '*',
     opts = {
-      -- 'default' for mappings similar to built-in completion
-      -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-      -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-      -- See the full "keymap" documentation for information on defining your own keymap.
       keymap = {
         preset = 'enter',
         ['<Tab>'] = { 'select_next', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'fallback' },
 
       },
+
+      completion = {
+        list = { selection = { preselect = function(ctx) return ctx.mode ~= 'cmdline' end } },
+      },
+
+
 
       appearance = {
         use_nvim_cmp_as_default = true,
