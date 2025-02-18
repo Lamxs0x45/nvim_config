@@ -28,7 +28,6 @@ local clangd_cmd = {
     "--clang-tidy",
     "--header-insertion=iwyu",
     "--fallback-style=llvm",
-    "--function-arg-placeholders=false",
     "--header-insertion=never",
 }
 
