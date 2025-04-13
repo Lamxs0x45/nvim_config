@@ -1,6 +1,6 @@
 require("mason").setup()
 
-local servers = { "lua_ls", "pyright", "cssls", "tsserver" , "rust_analyzer" }
+local servers = { "lua_ls", "pyright", "cssls", "ts_ls" , "rust_analyzer" }
 
 require("mason-lspconfig").setup {
     ensure_installed = servers,
